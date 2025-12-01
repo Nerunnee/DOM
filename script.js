@@ -19,27 +19,39 @@
 // <li id="my-h1">Жимс (Friuts)</li>
 // </ul>`;
 
-list = [
-  "Тараг (Yogurt)",
-  "Сүү (Milk)",
-  "Тахианы мах (Chicken)",
-  "Жимс (Friuts)",
-];
+// list = [
+//   "Тараг (Yogurt)",
+//   "Сүү (Milk)",
+//   "Тахианы мах (Chicken)",
+//   "Жимс (Friuts)",
+// ];
 
-let listElement = `<h1>Авах зүйлсийн жагсаалт</h1>`;
+// let listElement = `<h1>Авах зүйлсийн жагсаалт</h1>`;
 
-let ul = "<ul>";
+// let ul = "<ul>";
 
-for (let i = 0; i < list.length; i++) {
-  const item = list[i];
+// for (let i = 0; i < list.length; i++) {
+//   const item = list[i];
 
-  const element = `<li>${item}</li>`;
+//   const element = `<li>${item}</li>`;
 
-  ul += element;
+//   ul += element;
+// }
+
+// ul += "</ul>";
+
+// listElement += ul;
+
+// document.body.innerHTML = listElement;
+
+const input = document.getElementById("input");
+
+function submit() {
+  const inputValue = input.value;
+
+  if (inputValue <= 10 && inputValue > 0) {
+    text.innerHTML = "valid";
+  } else {
+    text.innerHTML = "not valid";
+  }
 }
-
-ul += "</ul>";
-
-listElement += ul;
-
-document.body.innerHTML = listElement;
