@@ -60,12 +60,14 @@ const input = document.getElementById("input");
 
 const text = document.getElementById("text");
 
-const randomNumber = Math.floor(Math.random() * 10) + 1;
+const submitBtn = document.getElementById("submit-btn");
 
 oroldlogo = 0;
 
 function startGame() {
-  //   inputNumbers = [];
+  inputNumbers = [];
+
+  const randomNumber = Math.floor(Math.random() * 10) + 1;
 
   let inputValue = input.value;
 
@@ -79,7 +81,9 @@ function startGame() {
   //     text.innerHTML = "Давтагдсан тоо байна, Та өөр тоо оруулна уу?";
   //   }
 
-  //   inputNumbers.push(inputValue);
+  inputNumbers.push(inputValue);
+
+  console.log(inputNumbers);
 
   if (randomNumber > inputValue) {
     text.innerHTML = `Оролдлого ${oroldlogo}: ${randomNumber} нь ${inputValue}-аас их байна.`;
@@ -95,8 +99,8 @@ function startGame() {
 
   if (oroldlogo === 5) {
     text.innerHTML = `Та нийт ${oroldlogo} оролдлого хийснээр тоглоом дууслаа. ☹️ Та дахин оролдоно уу?`;
+    submitBtn.disable = true;
   }
 
-  //   text.innerHTML = ("Таны оруулсан нийт утга:", inputNumbers);
-  
+  // text.innerHTML = ("Таны оруулсан нийт утга:", inputNumbers);
 }
