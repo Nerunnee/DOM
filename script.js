@@ -44,14 +44,59 @@
 
 // document.body.innerHTML = listElement;
 
+// const input = document.getElementById("input");
+
+// function submit() {
+//   const inputValue = input.value;
+
+//   if (inputValue <= 10 && inputValue > 0) {
+//     text.innerHTML = "valid";
+//   } else {
+//     text.innerHTML = "not valid";
+//   }
+// }
+
 const input = document.getElementById("input");
 
-function submit() {
-  const inputValue = input.value;
+const text = document.getElementById("text");
 
-  if (inputValue <= 10 && inputValue > 0) {
-    text.innerHTML = "valid";
-  } else {
-    text.innerHTML = "not valid";
+const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+oroldlogo = 0;
+
+function startGame() {
+  //   inputNumbers = [];
+
+  let inputValue = input.value;
+
+  oroldlogo++;
+
+  if (!inputValue) {
+    text.innerHTML = "Та зөвхөн тоо оруулна уу?";
   }
+
+  //   if (inputNumbers.includes(inputValue)) {
+  //     text.innerHTML = "Давтагдсан тоо байна, Та өөр тоо оруулна уу?";
+  //   }
+
+  //   inputNumbers.push(inputValue);
+
+  if (randomNumber > inputValue) {
+    text.innerHTML = `Оролдлого ${oroldlogo}: ${randomNumber} нь ${inputValue}-аас их байна.`;
+  }
+
+  if (randomNumber < inputValue) {
+    text.innerHTML = `Оролдлого ${oroldlogo}: ${randomNumber} нь ${inputValue}-аас бага байна.`;
+  }
+
+  if (randomNumber === inputValue) {
+    text.innerHTML = `${randomNumber} , ${inputValue} тэнцүү байна. 🎉 Баяр хүргэе! Та Зөв таалаа! Нийт оролдлого: ${oroldlogo}`;
+  }
+
+  if (oroldlogo === 5) {
+    text.innerHTML = `Та нийт ${oroldlogo} оролдлого хийснээр тоглоом дууслаа. ☹️ Та дахин оролдоно уу?`;
+  }
+
+  //   text.innerHTML = ("Таны оруулсан нийт утга:", inputNumbers);
+  
 }
