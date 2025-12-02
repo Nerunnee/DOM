@@ -83,7 +83,9 @@ function startGame() {
 
   inputNumbers.push(inputValue);
 
-  console.log(inputNumbers);
+  if (randomNumber === inputValue) {
+    text.innerHTML = `${randomNumber} , ${inputValue} тэнцүү байна. 🎉 Баяр хүргэе! Та Зөв таалаа! Нийт оролдлого: ${oroldlogo}`;
+  }
 
   if (randomNumber > inputValue) {
     text.innerHTML = `Оролдлого ${oroldlogo}: ${randomNumber} нь ${inputValue}-аас их байна.`;
@@ -93,9 +95,7 @@ function startGame() {
     text.innerHTML = `Оролдлого ${oroldlogo}: ${randomNumber} нь ${inputValue}-аас бага байна.`;
   }
 
-  if (randomNumber === inputValue) {
-    text.innerHTML = `${randomNumber} , ${inputValue} тэнцүү байна. 🎉 Баяр хүргэе! Та Зөв таалаа! Нийт оролдлого: ${oroldlogo}`;
-  }
+  inputValue = "";
 
   if (oroldlogo === 5) {
     text.innerHTML = `Та нийт ${oroldlogo} оролдлого хийснээр тоглоом дууслаа. ☹️ Та дахин оролдоно уу?`;
