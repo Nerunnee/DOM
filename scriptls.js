@@ -88,8 +88,7 @@ for (let i = 0; i < classStudents.length; i++) {
   if (top3Student[0].score < classStudent.score) {
     top3Student[1] = top3Student[0];
     top3Student[0] = classStudent;
-  } else if (top3Student[1].score < classStudent.score) {
-    top3Student[3] = top3Student[2];
+  } else {
     top3Student[2] = top3Student[1];
     top3Student[1] = classStudent;
   }
