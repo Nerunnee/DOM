@@ -124,8 +124,32 @@ console.log(allPrice);
 
 const stringWords = ["hello", "world", "typescript", "js"];
 
-const longWord = stringWords.filter((stringWord) => {
-  longWord = stringWord[i];
+const longWord = stringWords.reduce((acc, stringWord) => {
+  if (acc.length > stringWord.length) {
+    return (acc = stringWord);
+  } else {
+    return (acc = stringWord);
+  }
 });
 
-console.log(maxWord);
+console.log(longWord);
+
+// Bodlogo 9.
+
+const aWords = ["hi", "hello", "hey"];
+
+const sumWords = aWords.reduce((acc, aWord) => aWord.length + acc, 0);
+
+console.log(sumWords);
+
+// Bodlogo 10.
+
+const products = [
+  { name: "Laptop", price: 900 },
+  { name: "Phone", price: 700 },
+  { name: "Monitor", price: 300 },
+];
+
+const maxProduct = products.filter((product) => Math.max(product.price));
+
+console.log(maxProduct);
